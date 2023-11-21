@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function ContainerForm() {
   const [isManualEndDayActive, setIsManualEndDayActive] = useState(false);
@@ -34,7 +35,8 @@ function ContainerForm() {
 
       <div className="w-full flex justify-between items-center">
         <input type="text" className="w-[65%] h-10 text-center bg-[#9A9087]  placeholder-white outline-none border-2 border-solid border-[#B0A9A4] rounded-lg" placeholder="Substratum" />
-        <button className="w-[30%] h-10 text-center bg-[#85796F] border-2 border-solid border-[#B0A9A4] rounded-lg">Add container</button>
+        <Link to="/containers" className="w-[30%] h-10 text-center bg-[#85796F] border-2 border-solid border-[#B0A9A4] rounded-lg">Add container</Link>
+
       </div>
     </div>
   )
