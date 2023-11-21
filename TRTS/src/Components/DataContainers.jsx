@@ -8,7 +8,7 @@ function DataContainers({ info }) {
                     <h1 className="text-sm font-bold text-white">{item.name}</h1>
                     <div className="h-[80%] w-[90%] cursor-pointer">
                         <Link to="/currentcontainer">
-                            <img src={item.image} className="w-full h-full object-cover rounded-xl"/>
+                            <img src="./Hongo2.jpg" className="w-full h-full object-cover rounded-xl"/>
                         </Link>
                     </div>
                 </div>
