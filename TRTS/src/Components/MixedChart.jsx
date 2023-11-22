@@ -4,7 +4,7 @@ import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Toolti
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 function MixedChart() {
-  const luxometerValue = 650;
+  const luxometerValue = 0.83;
 
   const data = {
     labels: ['Luxometer'],
@@ -23,7 +23,7 @@ function MixedChart() {
     scales: {
       y: {
         beginAtZero: true,
-        max: 1000, // Establecer el valor máximo del eje Y a 1000
+        max: 20, 
       },
     },
   };
