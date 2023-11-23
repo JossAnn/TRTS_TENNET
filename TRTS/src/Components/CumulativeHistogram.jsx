@@ -1,11 +1,11 @@
+import React from 'react';
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
 function CumulativeHistogram() {
-  // Datos de ejemplo
-  const dataPoints = [12, 19, 3, 5, 2, 3];
+  const dataPoints = [845, 312, 698, 429, 560, 193];
 
   const cumulativeData = dataPoints.reduce((acc, value) => {
     if (acc.length > 0) {
@@ -16,16 +16,18 @@ function CumulativeHistogram() {
     return acc;
   }, []);
 
+  const labels = ['00:00', '00:10', '00:20', '00:30', '00:40', '00:50'];
+
   const data = {
-    labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
+    labels: labels,
     datasets: [
       {
-        label: 'Carbon dioxide',
+        label: 'Carbon dioxide (ppm)',
         data: cumulativeData,
-        borderColor: 'rgba(75, 192, 192, 1)',
-        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+        borderColor: 'rgba(75, 192, 192)',
+        backgroundColor: 'rgba(75, 192, 192)',
         fill: false,
-        tension: 0.4,   
+        tension: 0.4,
       },
     ],
   };
@@ -51,3 +53,4 @@ function CumulativeHistogram() {
 }
 
 export default CumulativeHistogram;
+

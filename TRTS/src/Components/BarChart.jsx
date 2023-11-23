@@ -11,8 +11,8 @@ function BarChart() {
       {
         label: 'Humidity',
         data: [83, 17],
-        backgroundColor: ['rgba(54, 162, 235, 0.5)', 'rgba(211, 211, 211, 0.5)'],
-        borderColor: ['rgba(54, 162, 235, 1)', 'rgba(211, 211, 211, 1)'],
+        backgroundColor: ['rgba(54, 162, 235, 0.5)', 'rgba(211, 211, 211)'],
+        borderColor: ['rgba(54, 162, 235, 1)', 'rgba(211, 211, 211)'],
         borderWidth: 1,
       },
     ],

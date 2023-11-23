@@ -12,8 +12,8 @@ function MixedChart() {
       {
         label: 'Luxometer',
         data: [luxometerValue],
-        backgroundColor: 'rgba(75,192,192,0.6)',
-        borderColor: 'rgba(75,192,192,1)',
+        backgroundColor: 'rgba(75,192,192)',
+        borderColor: 'rgba(75,192,192)',
         borderWidth: 1,
       }
     ],

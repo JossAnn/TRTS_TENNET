@@ -9,6 +9,7 @@ import CarboDioxideGraph from '../Pages/Graphics/CarbonDioxideGraph';
 import HumidityGraph from '../Pages/Graphics/HumidityGraph';
 import Luxmeter from '../Pages/Graphics/Luxmeter';
 import TemperatureGraph from '../Pages/Graphics/TemperatureGraph';
+import Information from '../Pages/Information/Information';
 
 function AppRoutes() {
   return (
@@ -23,6 +24,7 @@ function AppRoutes() {
         <Route path='/humidity' element={<HumidityGraph />} />
         <Route path='/co2' element={<CarboDioxideGraph />} />
         <Route path='/luxometer' element={<Luxmeter />} />
+        <Route path='/information' element={<Information />} />
       </Routes>
     </Router>
   );
