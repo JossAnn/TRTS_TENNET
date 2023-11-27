@@ -6,13 +6,12 @@ function Sidebar( {children} ) {
 
     useEffect(() => {
         const userId = localStorage.getItem('user_id');
-        console.log(localStorage.getItem('user_id'))
         if (userId) {
             fetch(`http://127.0.0.1:5000/users/${userId}`)
                 .then(response => response.json())
                 .then(data => {
-                    if (data && data.name) {
-                        setUserName(data.name);
+                    if (data) {
+                        setUserName(data.map(item => item.name));
                     } else {
                         setUserName('Name not found');
                     }
