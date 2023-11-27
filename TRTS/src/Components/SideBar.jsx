@@ -1,20 +1,28 @@
 import { Link } from "react-router-dom";
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 function Sidebar( {children} ) {
     const [userName, setUserName] = useState('User name');
 
     useEffect(() => {
         const userId = localStorage.getItem('user_id');
+        console.log(localStorage.getItem('user_id'))
         if (userId) {
-            fetch(`http://localhost:5000/users/${userId}`)
+            fetch(`http://127.0.0.1:5000/users/${userId}`)
                 .then(response => response.json())
                 .then(data => {
-                    if (data.name) {
-                        setUserName(data.name); // Asumiendo que 'name' es parte de la respuesta
+                    if (data && data.name) {
+                        setUserName(data.name);
+                    } else {
+                        setUserName('Name not found');
                     }
                 })
-                .catch(error => console.error(error));
+                .catch(error => {
+                    console.error('Error al obtener datos del usuario:', error);
+                    setUserName('Error al cargar');
+                });
+        } else {
+            setUserName('Usuario no identificado');
         }
     }, []);
 

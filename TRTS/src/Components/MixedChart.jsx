@@ -1,17 +1,39 @@
+import { useState, useEffect } from 'react';
 import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 function MixedChart() {
-  const luxometerValue = 0.83;
+  const [luxometerValues, setLuxometerValues] = useState([]);
+  const [luxometerValue, setLuxometerValue] = useState(0);
+
+  useEffect(() => {
+    setLuxometerValues(prevValues => [...prevValues, luxometerValue]);
+  }, [luxometerValue]);
+
+  useEffect(() => {
+    const fetchSensorData = async () => {
+      try {
+        const response = await fetch('http://127.0.0.1:5000/sensors');
+        const data = await response.json();
+        setLuxometerValue(data.map(item => item.temperature));
+      } catch (error) {
+        console.error('Error fetching sensor data:', error);
+      }
+    };
+
+    fetchSensorData();
+  }, []);
+
+  const lastLuxometerValue = luxometerValues.slice(-1)[0] || 0;
 
   const data = {
     labels: ['Luxometer'],
     datasets: [
       {
         label: 'Luxometer',
-        data: [luxometerValue],
+        data: [lastLuxometerValue],
         backgroundColor: 'rgba(75,192,192)',
         borderColor: 'rgba(75,192,192)',
         borderWidth: 1,
@@ -23,7 +45,7 @@ function MixedChart() {
     scales: {
       y: {
         beginAtZero: true,
-        max: 20, 
+        max: 100, 
       },
     },
   };
@@ -36,5 +58,3 @@ function MixedChart() {
 }
 
 export default MixedChart;
-
-

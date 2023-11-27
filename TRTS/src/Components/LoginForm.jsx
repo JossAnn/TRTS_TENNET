@@ -27,7 +27,6 @@ function LoginForm() {
             const data = await response.json();
 
             if (response.ok) {
-                // Suponiendo que 'data' contiene el user_id
                 localStorage.setItem('user_id', data.user_id);
                 window.location.href = '/containers';
             }else {
