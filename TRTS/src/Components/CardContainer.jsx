@@ -12,7 +12,7 @@ function CardContainer() {
 
     const FetchData = () => {
         if (userId) {
-            const url = `http://127.0.0.1:6000/containers?user_id=${userId}`;
+            const url = `http://44.196.3.52:3006/container?user_id=${userId}`;
             fetch(url)
                 .then(response => response.json())
                 .then(data => setInfo(data))

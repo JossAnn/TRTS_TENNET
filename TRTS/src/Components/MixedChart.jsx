@@ -10,7 +10,7 @@ function MixedChart() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:6000/sensor');
+        const response = await fetch('http://44.196.3.52:3006/sensor');
         const data = await response.json();
         const lastluxometer = data[data.length - 1]?.luxometer || 0;
         setLuxometerValues([lastluxometer, 0]);
