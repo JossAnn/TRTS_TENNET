@@ -16,7 +16,7 @@ function RegisterForm() {
         }
 
         try {
-            const response = await fetch('http://localhost:5000/users', {
+            const response = await fetch('http://127.0.0.1:6000/user', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -75,7 +75,7 @@ function RegisterForm() {
                 <button type="submit" className="bg-[#85796F] rounded-lg flex self-center w-40 items-center justify-center h-9 text-white font-bold">Create account</button><br />
                 <div className="flex self-center text-xs">
                     <label htmlFor="" className="text-[#00000080]">Already have an account?</label>
-                    <Link to="/login" className="text-[#FFFFFF80] border-b border-[#FFFFFF80] cursor-pointer ml-2">Log in</Link>
+                    <Link to="/" className="text-[#FFFFFF80] border-b border-[#FFFFFF80] cursor-pointer ml-2">Log in</Link>
                 </div>    
             </form>
         </div>

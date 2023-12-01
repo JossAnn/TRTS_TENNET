@@ -22,7 +22,7 @@ function CumulativeChart() {
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const response = await fetch('http://127.0.0.1:5000/sensors');
+          const response = await fetch('http://127.0.0.1:6000/sensor');
           const data = await response.json();
           const updatedChartData = {
             labels: data.map((_, index) => `${index * 1} min`),
