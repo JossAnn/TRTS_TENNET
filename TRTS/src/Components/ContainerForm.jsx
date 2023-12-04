@@ -12,7 +12,7 @@ function ContainerForm() {
     try {
       const userId = localStorage.getItem('user_id');
 
-      const response = await fetch('http://127.0.0.1:3000/container', {
+      const response = await fetch('44.196.3.52:3006/container', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

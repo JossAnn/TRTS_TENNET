@@ -5,7 +5,7 @@ function Info({ containerId }) {
     const [containerData, setContainerData] = useState({});
 
     useEffect(() => {
-        fetch(`http://127.0.0.1:3000/container/${containerId}`)
+        fetch(`http://44.196.3.52:3006/container/${containerId}`)
             .then(response => response.json())
             .then(data => setContainerData(data))
             .catch(error => console.error('Error fetching container data:', error));

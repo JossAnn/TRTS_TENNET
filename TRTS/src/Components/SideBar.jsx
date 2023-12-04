@@ -8,7 +8,7 @@ function Sidebar( {children} ) {
     useEffect(() => {
         const userId = localStorage.getItem('user_id');
         if (userId) {
-            fetch(`http://127.0.0.1:3000/user/${userId}`)
+            fetch(`http://44.196.3.52:3006/user/${userId}`)
                 .then(response => response.json())
                 .then(data => {
                     if (data) {

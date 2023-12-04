@@ -16,7 +16,7 @@ function LoginForm() {
         }
 
         try {
-            const response = await fetch('http://127.0.0.1:3000/user/login', {
+            const response = await fetch('http://44.196.3.52:3006/user/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
