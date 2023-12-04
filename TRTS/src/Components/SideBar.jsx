@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from 'react';
+import { data } from "autoprefixer";
 
 function Sidebar( {children} ) {
     const [userName, setUserName] = useState('User name');
@@ -11,7 +12,7 @@ function Sidebar( {children} ) {
                 .then(response => response.json())
                 .then(data => {
                     if (data) {
-                        setUserName(data.map(item => item.name));
+                        setUserName(data.name);
                     } else {
                         setUserName('Name not found');
                     }
