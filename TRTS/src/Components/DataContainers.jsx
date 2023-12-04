@@ -1,9 +1,9 @@
 function DataContainers({ info }) {
-    const handleRedirect = (containerId) => {
+    const handleRedirect = () => {
         //window.location.href = `/information/${containerId}`;
         window.location.href = `/temperature`;
     };
-
+    console.log(info)
     return (
         <div className="col-span-6 grid grid-cols-5 w-full h-full">
             {info.slice(0, 9).map((item, index) => (
